@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 
 namespace FM_solution
@@ -135,21 +135,21 @@ namespace FM_solution
             Console.Clear();
             c = a.TrimStart(dels);
 
-            if (Directory.Exists(c))     
+            if (Directory.Exists(c))
             {
                 string[] b = Directory.GetDirectories(c);
                 string[] d = Directory.GetFiles(c);
-
-                for (int i = 0; i < b.Length; i++)  
+                for (int i = 0; i < b.Length; i++)
                 {
                     Console.WriteLine($"║ {b[i]}");     // вывод каталога
-
-                    for (int s = 0; s < d.Length; s++)
+                    if (File.Exists(c))
                     {
-                        Console.WriteLine($" ╚{ d[s]}");  // вывод файла
+                        for (int s = 0; s < d.Length; s++)
+                        {
+                            Console.WriteLine($" ╚{ d[s]}");  // вывод файла
+                        }
                     }
                 }
-
                 GetInfo.InfoD(c);  // вывод информации о каталоге
             }
 
