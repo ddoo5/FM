@@ -40,7 +40,6 @@ namespace FM_solution
                                 break;
                             case 'w':
                                 open.DF(userenter);
-                                info.FD(userenter);
                                 break;
                             default:       // сохраняет ошибки пользователя в файл errors.txt
                                 Console.WriteLine(eror.A(userenter));
